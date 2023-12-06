@@ -9,12 +9,7 @@ fun main() {
     val minutes: Int = (secondsFlight - oneHourInSeconds * hours) / oneMinuteInSeconds
     val seconds: Int = secondsFlight % oneMinuteInSeconds
 
-    val outHours: String = String.format("%02d", hours)
-    val outMinutes: String = String.format("%02d", minutes)
-    val outSeconds: String = String.format("%02d", seconds)
-
-
-    println("$outHours:$outMinutes:$outSeconds")
+    println("%02d:%02d:%02d".format(hours, minutes, seconds))
 
 }
 

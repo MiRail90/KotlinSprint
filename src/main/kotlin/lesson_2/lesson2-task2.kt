@@ -6,9 +6,9 @@ fun main() {
     val countTrainee: Byte = 30
     val salaryTrainee: Short = 20000
 
-    val totalSalaryEmployee = salaryEmployee * countEmployee
-    val totalSalary = countTrainee * salaryTrainee + totalSalaryEmployee
-    val averageSalary: Float = totalSalary / (countEmployee + countTrainee).toFloat()
+    val totalSalaryEmployee: Int = salaryEmployee * countEmployee
+    val totalSalary: Int = countTrainee * salaryTrainee + totalSalaryEmployee
+    val averageSalary: Int = totalSalary / (countEmployee + countTrainee)
 
     println(
         """

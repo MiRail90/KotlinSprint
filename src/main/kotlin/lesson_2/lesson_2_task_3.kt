@@ -6,9 +6,9 @@ fun main() {
     val travelTime: Short = 457
     val oneHourInMinute: Byte = 60
 
-    val arrivalTimeInMinute: Short = (hourDeparture * oneHourInMinute + minuteDeparture + travelTime).toShort()
-    val hourArrival: Byte = (arrivalTimeInMinute / oneHourInMinute).toByte()
-    val minuteArrival: Byte = (arrivalTimeInMinute - hourArrival * oneHourInMinute).toByte()
+    val arrivalTimeInMinutes: Short = (hourDeparture * oneHourInMinute + minuteDeparture + travelTime).toShort()
+    val hourArrival: Byte = (arrivalTimeInMinutes / oneHourInMinute).toByte()
+    val minuteArrival: Byte = (arrivalTimeInMinutes - hourArrival * oneHourInMinute).toByte()
 
 
     println("Время прибытия поезда %02d:%02d".format(hourArrival, minuteArrival))

@@ -11,6 +11,6 @@ fun main() {
     val minuteArrival: Byte = (arrivalTimeInMinute - hourArrival * oneHourInMinute).toByte()
 
 
-    println("%02d:%02d".format(hourArrival, minuteArrival))
+    println("Время прибытия поезда %02d:%02d".format(hourArrival, minuteArrival))
 
 }

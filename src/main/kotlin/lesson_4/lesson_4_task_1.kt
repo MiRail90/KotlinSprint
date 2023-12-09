@@ -6,7 +6,8 @@ fun main() {
     val bookedTablesTomorrow = 9
 
     println(
-        "Доступность столиков на сегодня: ${countTables > bookedTablesToday},\n" +
-        "Доступность столиков на завтра: ${countTables > bookedTablesTomorrow}"
+        "Доступность столиков на сегодня: ${COUNT_TABLES > bookedTablesToday},\n" +
+        "Доступность столиков на завтра: ${COUNT_TABLES > bookedTablesTomorrow}"
     )
 }
+const val COUNT_TABLES = 13

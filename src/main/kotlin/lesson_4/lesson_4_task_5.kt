@@ -2,22 +2,22 @@ package lesson_4
 
 fun main() {
     println("Корабль поврежден?, введите (true или false):")
-    val undamagedShip: Boolean = readLine()!!.toBoolean()
+    val isDamagedShip: Boolean = readLine()!!.toBoolean()
     println("Введите количество экипажа:")
     val countCrew: Int = readLine()!!.toInt()
     println("Введите количество ящиков провизии:")
     val countBoxes: Int = readLine()!!.toInt()
     println("Благоприятная погода?, введите (true или false):")
-    val favorableWeatherConditions: Boolean = readLine()!!.toBoolean()
+    val isFavorableWeatherConditions: Boolean = readLine()!!.toBoolean()
 
-    val idealUndamagedShip: Boolean = true
-    val idealCountCrewMin: Int = 55
-    val idealCountCrewMax: Int = 70
-    val idealCountBoxes: Int = 50
+    val isDamagedShipIdeal: Boolean = false
+    val countCrewMinIdeal: Int = 55
+    val countCrewMaxIdeal: Int = 70
+    val countBoxesIdeal: Int = 50
 
-    val secondChanceCountCrew = 70
-    val secondChanceFavorableWeatherConditions: Boolean = true
-    val secondChanceCountBoxes: Int = 50
+    val CountCrewSecondChance = 70
+    val isFavorableWeatherConditionsSecondChance: Boolean = true
+    val countBoxesSecondChance: Int = 50
 
-    println("Корабль готов к плаванию: ${((undamagedShip == idealUndamagedShip) && (countCrew in (idealCountCrewMin..idealCountCrewMax)) && (countBoxes > idealCountBoxes)) or ((undamagedShip != idealUndamagedShip) && (countCrew == secondChanceCountCrew) && (favorableWeatherConditions == secondChanceFavorableWeatherConditions) && (countBoxes >= secondChanceCountBoxes))}")
+    println("Корабль готов к плаванию: ${((isDamagedShip == isDamagedShipIdeal) && (countCrew in (countCrewMinIdeal..countCrewMaxIdeal)) && (countBoxes > countBoxesIdeal)) or ((isDamagedShip != isDamagedShipIdeal) && (countCrew == CountCrewSecondChance) && (isFavorableWeatherConditions == isFavorableWeatherConditionsSecondChance) && (countBoxes >= countBoxesSecondChance))}")
 }

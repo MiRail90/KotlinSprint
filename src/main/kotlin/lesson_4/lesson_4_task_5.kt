@@ -2,13 +2,13 @@ package lesson_4
 
 fun main() {
     println("Корабль поврежден?, введите (true или false):")
-    val isDamagedShip: Boolean = readLine()!!.toBoolean()
+    val isDamagedShip: Boolean = readln().toBoolean()
     println("Введите количество экипажа:")
-    val countCrew: Int = readLine()!!.toInt()
+    val countCrew: Int = readln().toInt()
     println("Введите количество ящиков провизии:")
-    val countBoxes: Int = readLine()!!.toInt()
+    val countBoxes: Int = readln().toInt()
     println("Благоприятная погода?, введите (true или false):")
-    val isFavorableWeatherConditions: Boolean = readLine()!!.toBoolean()
+    val isFavorableWeatherConditions: Boolean = readln().toBoolean()
 
     val isDamagedShipIdeal: Boolean = false
     val countCrewMinIdeal: Int = 55

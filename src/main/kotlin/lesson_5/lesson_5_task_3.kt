@@ -1,9 +1,9 @@
 package lesson_5
 
 fun main() {
-    val firsWinNumber = 5
+    val firstWinNumber = 5
     val secondWinNumber = 32
-    var giftLevel = 0
+    var giftLevel: String = ""
 
     println("Введите первое число (от 0 до 42):")
     val playerFirstNumber = readln().toInt()
@@ -12,21 +12,19 @@ fun main() {
     val playerSecondNumber = readln().toInt()
 
 
-    if (playerFirstNumber == firsWinNumber || playerFirstNumber == secondWinNumber) giftLevel++
-    if (playerSecondNumber == firsWinNumber || playerSecondNumber == secondWinNumber) giftLevel++
 
-    if (playerFirstNumber == playerSecondNumber) giftLevel-- //Проверка, если пользователь ввел два одинаковых числа и одно из чисел совпало с победным
+    if ((playerFirstNumber == firstWinNumber || playerFirstNumber == secondWinNumber) && (playerSecondNumber == firstWinNumber || playerSecondNumber == secondWinNumber) && (((firstWinNumber == secondWinNumber) && (playerFirstNumber == playerSecondNumber)) || ((firstWinNumber != secondWinNumber) && (playerFirstNumber != playerSecondNumber))))  //вся сложность у меня возникла: если организатором были задуманы разные числа а игроком были введены два одинаковых числа - поэтому такой длинный код у меня получился
+        giftLevel = "Поздравляем! Вы выиграли главный приз!"
+    else if (playerFirstNumber == firstWinNumber || playerFirstNumber == secondWinNumber || playerSecondNumber == firstWinNumber || playerSecondNumber == secondWinNumber)
+        giftLevel = "Вы выиграли утешительный приз!"
+    else giftLevel = "Неудача!"
 
-    if ((firsWinNumber == secondWinNumber) && (playerFirstNumber == playerSecondNumber)) giftLevel++ //Если организатор все же решил задумать два выиграшных числа одинаковыми и ввел их firsWinNumber и secondWinNumber, также если два числа введены неверно и они одинаковы и организатор задумал одинаковые -  на предыдущем шаге giftLevel будет равен "-1"
 
 
-    when (giftLevel) {
-        -1 -> println("Неудача!") //Если ввели два одинаковых числа и оно не выигрышное
-        0 -> println("Неудача!")
-        1 -> println("Вы выиграли утешительный приз!")
-        2 -> println("Поздравляем! Вы выиграли главный приз!")
 
-    }
-    println("Победные числа $firsWinNumber и $secondWinNumber")
+    println(giftLevel)
+    println("Победные числа $firstWinNumber и $secondWinNumber")
 
 }
+
+

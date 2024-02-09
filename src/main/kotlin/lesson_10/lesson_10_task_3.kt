@@ -2,23 +2,19 @@ package lesson_10
 
 fun main() {
     println("Введите длину пароля ")
-    val maxLength: Int = readln().toInt()
-    val lengthPassword = 1..maxLength
-    val password = generatePassword(lengthPassword)
-    println(password)
+    val lengthPassword = 1..readln().toInt()
+    println(generatePassword(lengthPassword))
 }
+
 fun generatePassword(lengthPassword: IntRange): String {
     val intRange = 0..9
-    val specRange = "!\"#$%&'()*+,-./ "
+    val specRange = 32..47
     var password = ""
-    var digit = true
     for (i in lengthPassword) {
-        if (digit) {
-            password = password.plus(intRange.random())
-            digit = false
+        password = if (password.length % 2 == 0) {
+            password.plus(intRange.random())
         } else {
-            password = password.plus(specRange.random())
-            digit = true
+            password.plus(specRange.random().toChar())
         }
     }
     return (password)

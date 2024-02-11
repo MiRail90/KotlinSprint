@@ -3,7 +3,7 @@ package lesson_10
 fun main() {
     var numberOfPersonWinnings = 0
     var game = "Да"
-    while (game == "Да") {
+    while (game.equals("Да", true)) {
         if (round()) numberOfPersonWinnings++
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         game = readln()
@@ -16,17 +16,21 @@ fun round(): Boolean {
     println("Ход человека. Выпавшее число $humanNumber")
     val computerNumber = rollTheDice()
     println("Ход компьютера. Выпавшее число $computerNumber")
-    return if (humanNumber > computerNumber) {
-        println("Победило человечество")
-        true
-    } else
-        if (humanNumber < computerNumber) {
-            println("Победила машина")
-            false
-        } else {
-            println("Победила дружба")
-            false
+    return when {
+        humanNumber > computerNumber -> {
+            println("Победило человечество"); true
         }
+
+        humanNumber < computerNumber -> {
+            println("Победила машина"); false
+        }
+
+        else -> {
+            println("Победила дружба"); false
+        }
+    }
+
+
 }
 
 fun rollTheDice(): Int {
